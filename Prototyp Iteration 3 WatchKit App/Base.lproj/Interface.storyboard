@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,10 +19,12 @@
                                 <tableRow identifier="RowController" id="F9c-HA-W3w" customClass="RowController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="A81-8U-Z3K">
                                         <items>
-                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="pfs-Wf-ZAu"/>
+                                            <imageView width="25" height="25" alignment="left" verticalAlignment="center" image="mold" id="0FZ-BS-Se9"/>
+                                            <label height="1" alignment="left" text="Label" id="pfs-Wf-ZAu"/>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="rowImage" destination="0FZ-BS-Se9" id="9gF-n8-aQb"/>
                                         <outlet property="rowLabel" destination="pfs-Wf-ZAu" id="YhV-4b-IVV"/>
                                     </connections>
                                 </tableRow>
@@ -41,10 +43,23 @@
             <objects>
                 <controller identifier="DetailInterfaceController" id="bTn-UZ-8FZ" customClass="DetailInterfaceController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
                     <items>
-                        <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="qNx-05-QSd"/>
+                        <table alignment="left" id="0BX-jH-cx8">
+                            <items>
+                                <tableRow identifier="RowController" id="HK8-4B-Mta" customClass="RowController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="9S2-Tn-HN8">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="bRi-IB-Mip"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="bRi-IB-Mip" id="LTz-6B-00s"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
-                        <outlet property="detailLabel" destination="qNx-05-QSd" id="mNE-IN-STf"/>
+                        <outlet property="tableView" destination="0BX-jH-cx8" id="WXS-1o-YJX"/>
                     </connections>
                 </controller>
             </objects>
@@ -80,6 +95,33 @@
                 <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Prototyp_Iteration_3_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="1059"/>
+        </scene>
+        <!--IOInterfaceController-->
+        <scene sceneID="QgX-wR-T1D">
+            <objects>
+                <controller identifier="IOInterfaceController" id="smY-cn-M15" customClass="IOInterfaceController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="ns8-eq-pyO">
+                            <items>
+                                <tableRow identifier="RowController" id="Bx2-fC-cCz" customClass="RowController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="XjZ-9L-S4A">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="goI-hI-PUu"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="goI-hI-PUu" id="pMK-SW-UDI"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="ns8-eq-pyO" id="fuR-hi-R0W"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="737" y="345"/>
         </scene>
     </scenes>
 </document>

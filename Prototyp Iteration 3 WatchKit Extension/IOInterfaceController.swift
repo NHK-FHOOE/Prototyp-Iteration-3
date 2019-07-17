@@ -1,37 +1,29 @@
 //
-//  DetailInterfaceController.swift
+//  IOInterfaceController.swift
 //  Prototyp Iteration 3 WatchKit Extension
 //
-//  Created by Niels-Hendrik Klopsch on 15.07.19.
+//  Created by Niels-Hendrik Klopsch on 16.07.19.
 //  Copyright © 2019 Niels-Hendrik Klopsch. All rights reserved.
 //
 
 import Foundation
 import WatchKit
 
-class DetailInterfaceController: WKInterfaceController {
+class IOInterfaceController: WKInterfaceController {
     
     // Alt - Label Test
     // @IBOutlet weak var detailLabel: WKInterfaceLabel!
     @IBOutlet weak var tableView: WKInterfaceTable!
     let tableData = ["1", "2", "3", "4", "5", "6"]
-    let auswerferData = ["Endlagen"]
-    let duseData = ["Position", "Endlage"]
-    let formData = ["Position", "Heizung", "Kühlung", "Druck", "Luftkreis"]
-    let periData = ["Steckdose", "Alarmlampe"]
-    let schneckeData = ["Position"]
-
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         //Nimm die Daten, die übergeben wurden und schreibe sie auf detailLabel
         /* Alt - Label Test
+         if let detailData = context as? String {
+         detailLabel.setText(detailData)
+         }*/
         if let detailData = context as? String {
-            detailLabel.setText(detailData)
-        }*/
-        if let detailData = context as? String {
-            //Text oben links
-            setTitle(detailData)
-            //Tabelle laden
             loadTableData(detailData: detailData)
         }
     }
@@ -51,3 +43,4 @@ class DetailInterfaceController: WKInterfaceController {
         }
     }
 }
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A1E991022DD00B800BC4364 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E990F22DD00B800BC4364 /* DetailInterfaceController.swift */; };
+		8A1E991222DE0C0300BC4364 /* IOInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E991122DE0C0300BC4364 /* IOInterfaceController.swift */; };
 		8AEB997C22DCEC37001D717E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB997B22DCEC37001D717E /* AppDelegate.swift */; };
 		8AEB997E22DCEC37001D717E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEB997D22DCEC37001D717E /* ViewController.swift */; };
 		8AEB998122DCEC37001D717E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB997F22DCEC37001D717E /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		8A1E990F22DD00B800BC4364 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
+		8A1E991122DE0C0300BC4364 /* IOInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOInterfaceController.swift; sourceTree = "<group>"; };
 		8AEB997822DCEC37001D717E /* Prototyp Iteration 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Prototyp Iteration 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEB997B22DCEC37001D717E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AEB997D22DCEC37001D717E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				8AEB99A722DCEC3C001D717E /* PushNotificationPayload.apns */,
 				8AEB99B522DCEDFA001D717E /* RowController.swift */,
 				8A1E990F22DD00B800BC4364 /* DetailInterfaceController.swift */,
+				8A1E991122DE0C0300BC4364 /* IOInterfaceController.swift */,
 			);
 			path = "Prototyp Iteration 3 WatchKit Extension";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				8AEB99B622DCEDFA001D717E /* RowController.swift in Sources */,
 				8AEB999F22DCEC3B001D717E /* InterfaceController.swift in Sources */,
 				8A1E991022DD00B800BC4364 /* DetailInterfaceController.swift in Sources */,
+				8A1E991222DE0C0300BC4364 /* IOInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
