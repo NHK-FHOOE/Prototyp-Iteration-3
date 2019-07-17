@@ -15,7 +15,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var tableView: WKInterfaceTable!
     
     let tableData = ["Auswerfer","Düse", "Form", "Peripherie","Schnecke"]
-    let iconData = ["Auswerfer":"ejector","Düse":"nozzle", "Form":"mold", "Peripherie":"conveyor","Schnecke":"screw"]
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -42,7 +41,7 @@ class InterfaceController: WKInterfaceController {
         for (index, rowModel) in tableData.enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
-                rowController.rowImage.setImage(UIImage(named: iconData[rowModel]!))
+                rowController.rowImage.setImage(UIImage(named: tableData[index]))
             }
         }
     }

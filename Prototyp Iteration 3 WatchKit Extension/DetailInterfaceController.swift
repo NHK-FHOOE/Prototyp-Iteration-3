@@ -14,12 +14,7 @@ class DetailInterfaceController: WKInterfaceController {
     // Alt - Label Test
     // @IBOutlet weak var detailLabel: WKInterfaceLabel!
     @IBOutlet weak var tableView: WKInterfaceTable!
-    let tableData = ["1", "2", "3", "4", "5", "6"]
-    let auswerferData = ["Endlagen"]
-    let duseData = ["Position", "Endlage"]
-    let formData = ["Position", "Heizung", "Kühlung", "Druck", "Luftkreis"]
-    let periData = ["Steckdose", "Alarmlampe"]
-    let schneckeData = ["Position"]
+    var tableData = [""]
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -28,6 +23,22 @@ class DetailInterfaceController: WKInterfaceController {
         if let detailData = context as? String {
             detailLabel.setText(detailData)
         }*/
+        
+        switch context as? String {
+        case "Auswerfer":
+            tableData = ["Endlagen"]
+        case "Düse":
+            tableData = ["Position", "Endlage"]
+        case "Form":
+            tableData = ["Position", "Heizung", "Kühlung", "Druck", "Luftkreis"]
+        case "Peripherie":
+            tableData = ["Steckdose", "Alarmlampe"]
+        case "Schnecke":
+            tableData = ["Position"]
+        default:
+            tableData = ["Error!"]
+        }
+        
         if let detailData = context as? String {
             //Text oben links
             setTitle(detailData)
@@ -46,7 +57,8 @@ class DetailInterfaceController: WKInterfaceController {
         tableView.setNumberOfRows(tableData.count, withRowType: "RowController")
         for (index, rowModel) in tableData.enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
-                rowController.rowLabel.setText(detailData+"."+rowModel)
+                rowController.rowLabel.setText(rowModel)
+                rowController.rowImage.setImage(UIImage(named: tableData[index]))
             }
         }
     }
