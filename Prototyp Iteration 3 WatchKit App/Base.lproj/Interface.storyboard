@@ -12,14 +12,14 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Proto3_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Prototyp_Iteration_3_WatchKit_App" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="FWN-qd-9rb">
                             <items>
                                 <tableRow identifier="RowController" id="F9c-HA-W3w" customClass="RowController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="A81-8U-Z3K">
                                         <items>
-                                            <imageView width="25" height="25" alignment="left" verticalAlignment="center" image="mold" id="0FZ-BS-Se9"/>
+                                            <imageView width="25" height="25" alignment="left" verticalAlignment="center" image="Form" id="0FZ-BS-Se9"/>
                                             <label height="1" alignment="left" text="Label" id="pfs-Wf-ZAu"/>
                                         </items>
                                     </group>
@@ -31,12 +31,71 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="SdH-s0-mwF">
+                        <items>
+                            <menuItem title="Kabel Nr." icon="more" id="9L6-df-0hY">
+                                <connections>
+                                    <action selector="onMenuPress" destination="AgC-eL-Hgc" id="Xl6-Wc-vNs"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="tableView" destination="FWN-qd-9rb" id="uyV-8Q-dR9"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--BMKInterfaceController-->
+        <scene sceneID="odq-8p-ijw">
+            <objects>
+                <controller identifier="BMKInterfaceController" id="9Lg-5x-6C9" customClass="BMKInterfaceController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="5tT-9e-LTv">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="=" id="RD3-PP-BO6"/>
+                                <picker width="0.90000000000000002" height="30" alignment="right" focusStyle="stack" id="K7O-Sk-7yh">
+                                    <connections>
+                                        <action selector="bmkPickerChanged1:" destination="9Lg-5x-6C9" id="9Ag-ph-so0"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="qpw-YS-CPh">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="-" id="24v-N5-HoR"/>
+                                <picker width="0.90000000000000002" height="30" alignment="right" focusStyle="stack" id="aPD-Q2-2Wh">
+                                    <connections>
+                                        <action selector="bmkPickerChanged2:" destination="9Lg-5x-6C9" id="VkF-vS-THQ"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="YDu-6W-wpr">
+                            <items>
+                                <label height="20" alignment="left" verticalAlignment="center" text="-" id="ZOC-to-bIe"/>
+                                <picker width="0.90000000000000002" height="30" alignment="right" focusStyle="stack" id="E0z-86-Qdx">
+                                    <connections>
+                                        <action selector="bmkPickerChanged3:" destination="9Lg-5x-6C9" id="fcc-qc-i7B"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Bestätigen" id="bXV-oh-ifc">
+                            <connections>
+                                <action selector="onAcceptPressed" destination="9Lg-5x-6C9" id="nq1-vH-Wnt"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="bmkPicker1" destination="K7O-Sk-7yh" id="XTM-UY-tax"/>
+                        <outlet property="bmkPicker2" destination="aPD-Q2-2Wh" id="O8K-vS-JR7"/>
+                        <outlet property="bmkPicker3" destination="E0z-86-Qdx" id="wnI-2T-PVt"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.69230769230771" y="642.94871794871801"/>
         </scene>
         <!--DetailInterfaceController-->
         <scene sceneID="lQ1-ys-gOC">
@@ -72,14 +131,22 @@
                     <items>
                         <table alignment="left" id="ns8-eq-pyO">
                             <items>
-                                <tableRow identifier="RowController" id="Bx2-fC-cCz" customClass="RowController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="XjZ-9L-S4A">
+                                <tableRow identifier="IORowController" id="Bx2-fC-cCz" customClass="IORowController" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="XjZ-9L-S4A">
                                         <items>
-                                            <label width="1" height="1" alignment="left" text="Label" textAlignment="center" id="goI-hI-PUu"/>
+                                            <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="3" id="goI-hI-PUu">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="3" id="Zum-SO-W5N"/>
+                                            <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="3" id="vMu-aN-KaK">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="rowLabel" destination="goI-hI-PUu" id="pMK-SW-UDI"/>
+                                        <outlet property="BMKLabel" destination="vMu-aN-KaK" id="PVj-tf-cYH"/>
+                                        <outlet property="LangtextLabel" destination="goI-hI-PUu" id="Aq4-2l-LkB"/>
+                                        <outlet property="statusLabel" destination="Zum-SO-W5N" id="wiI-DB-hcq"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -91,6 +158,64 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="737" y="345"/>
+        </scene>
+        <!--Dialog-->
+        <scene sceneID="mwP-wt-z3S">
+            <objects>
+                <controller identifier="Dialog" id="muL-aA-Lzq" customClass="Dialog" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="2" id="RXC-5e-kFU"/>
+                        <button width="1" alignment="left" title="Aktivieren" id="QZJ-BP-tNT">
+                            <connections>
+                                <action selector="didPressStatusBtn" destination="muL-aA-Lzq" id="vUb-YB-QuF"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Abbrechen" id="dvR-QI-xlE">
+                            <color key="titleColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="didPressCancelBtn" destination="muL-aA-Lzq" id="qzv-io-w3u"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="cancelBtn" destination="dvR-QI-xlE" id="w54-nC-Rq0"/>
+                        <outlet property="message" destination="RXC-5e-kFU" id="cFx-zi-QyH"/>
+                        <outlet property="statusBtn" destination="QZJ-BP-tNT" id="MH5-au-AKb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1037" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="qcz-kC-X9s">
+            <objects>
+                <notificationController id="CBd-Fe-adh">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="fd6-nA-mUG"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="7IN-Kw-hzN"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="fd6-nA-mUG" id="HQP-1M-Irp"/>
+                        <segue destination="T0A-GR-4IR" kind="relationship" relationship="dynamicNotificationInterface" id="dWH-31-hCA"/>
+                        <segue destination="b3u-ep-Ylp" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="iuE-NY-saK"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="737" y="1055"/>
+        </scene>
+        <!--Dynamic Notification Interface Controller-->
+        <scene sceneID="Y4g-1Q-qK7">
+            <objects>
+                <controller id="T0A-GR-4IR"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="1055"/>
+        </scene>
+        <!--Dynamic Interactive Notification Interface Controller-->
+        <scene sceneID="6aR-ev-sNE">
+            <objects>
+                <controller id="b3u-ep-Ylp"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="1441"/>
         </scene>
     </scenes>
 </document>

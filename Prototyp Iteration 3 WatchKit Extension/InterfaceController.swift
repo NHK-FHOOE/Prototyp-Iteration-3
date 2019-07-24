@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 
+var globalForce = "Aktiv"
 
 class InterfaceController: WKInterfaceController {
 
@@ -24,6 +25,10 @@ class InterfaceController: WKInterfaceController {
         setTitle("Kategorie")
         //Tabelle laden
         loadTableData()
+        
+        var defaults = UserDefaults(suiteName: "group.TestCompany.Prototyp-Iteration-3")
+        defaults!.set(9, forKey: "passingInt")
+        defaults!.synchronize()
     }
     
     override func willActivate() {
@@ -41,9 +46,14 @@ class InterfaceController: WKInterfaceController {
         for (index, rowModel) in tableData.enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
-                rowController.rowImage.setImage(UIImage(named: tableData[index]))
+                rowController.rowImage.setImage(UIImage(named: rowModel))
             }
         }
+    }
+    
+
+    @IBAction func onMenuPress() {
+        pushController(withName: "BMKInterfaceController", context: "")
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {

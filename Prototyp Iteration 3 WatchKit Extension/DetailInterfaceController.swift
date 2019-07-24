@@ -14,8 +14,9 @@ class DetailInterfaceController: WKInterfaceController {
     // Alt - Label Test
     // @IBOutlet weak var detailLabel: WKInterfaceLabel!
     @IBOutlet weak var tableView: WKInterfaceTable!
-    var tableData = [""]
-
+    var tableData: [String] = []
+    var prevTableData: String = ""
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         //Nimm die Daten, die übergeben wurden und schreibe sie auf detailLabel
@@ -23,8 +24,8 @@ class DetailInterfaceController: WKInterfaceController {
         if let detailData = context as? String {
             detailLabel.setText(detailData)
         }*/
-        
-        switch context as? String {
+        if let detailData = context as? String {
+        switch detailData {
         case "Auswerfer":
             tableData = ["Endlagen"]
         case "Düse":
@@ -38,12 +39,11 @@ class DetailInterfaceController: WKInterfaceController {
         default:
             tableData = ["Error!"]
         }
-        
-        if let detailData = context as? String {
+            prevTableData = detailData
             //Text oben links
             setTitle(detailData)
             //Tabelle laden
-            loadTableData(detailData: detailData)
+            loadTableData(tableData: tableData)
         }
     }
     override func willActivate() {
@@ -53,13 +53,17 @@ class DetailInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    private func loadTableData(detailData: String){
+    private func loadTableData(tableData: [String]){
         tableView.setNumberOfRows(tableData.count, withRowType: "RowController")
         for (index, rowModel) in tableData.enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
-                rowController.rowImage.setImage(UIImage(named: tableData[index]))
             }
         }
+    }
+    
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        //Suche nach InterfaceController namens "DetailinterfaceController" und gebe ihm was in tableData unter dem gedrücken Index befindet
+        pushController(withName: "IOInterfaceController", context: ioCard(langtext: prevTableData + "-" + tableData[rowIndex], status: false, bmk: "", force: false, index: 0))
     }
 }
