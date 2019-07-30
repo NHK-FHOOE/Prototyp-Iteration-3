@@ -9,15 +9,7 @@
 import Foundation
 import WatchKit
 
-//Aufbau einer IO Card
-struct ioCard {
-    var langtext: String
-    var status: Bool
-    var bmk: String
-    var force: Bool
-    var index: Int
-}
-var tableData: [ioCard] = [ioCard(langtext: "", status: false, bmk: "", force: false, index: 0)]
+var tableData: [ioCard] = [ioCard(langtext: "", status: false, bmk: "", force: false, index: 0, type: "DO")]
 
 class IOInterfaceController: WKInterfaceController {
     
@@ -31,6 +23,8 @@ class IOInterfaceController: WKInterfaceController {
             switch detailData.langtext {
             case "Form-Luftkreis":
                 tableData = formLuftData
+            case "Form-Holmposition":
+                tableData = formHolmData
             default:
                 tableData = [context] as! [ioCard]
             }
@@ -52,10 +46,14 @@ class IOInterfaceController: WKInterfaceController {
             if let rowController = tableView.rowController(at: index) as? IORowController {
                 rowController.LangtextLabel.setText(rowModel.langtext)
                 
-                if rowModel.status {
-                    rowController.statusLabel.setText("Aktiv")
+                if rowModel.type == "DI" || rowModel.type == "DO"{
+                    if rowModel.status {
+                        rowController.statusLabel.setText("Aktiv")
+                    } else {
+                        rowController.statusLabel.setText("Inaktiv")
+                    }
                 } else {
-                    rowController.statusLabel.setText("Inaktiv")
+                    rowController.statusLabel.setText("401 mm")
                 }
                 
                 if rowModel.force {
@@ -70,7 +68,11 @@ class IOInterfaceController: WKInterfaceController {
     }
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         //Suche nach InterfaceController namens "DetailinterfaceController" und gebe ihm was in tableData unter dem gedrücken Index befindet
-        pushController(withName: "Dialog", context: tableData[rowIndex])
+        if tableData[0].type == "DI" || tableData[0].type == "DO"{
+            pushController(withName: "Dialog", context: tableData[rowIndex])
+        } else {
+            pushController(withName: "DialogAnalog", context: tableData[rowIndex])
+        }
     }
     
     

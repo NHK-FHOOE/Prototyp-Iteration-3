@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 var globalForce = "Aktiv"
 
@@ -25,10 +26,13 @@ class InterfaceController: WKInterfaceController {
         setTitle("Kategorie")
         //Tabelle laden
         loadTableData()
-        
-        var defaults = UserDefaults(suiteName: "group.TestCompany.Prototyp-Iteration-3")
-        defaults!.set(9, forKey: "passingInt")
-        defaults!.synchronize()
+
+        if WCSession.default.isReachable{
+            let requestValues = ["command":"test"]
+            let session = WCSession.default
+            
+            session.sendMessage(requestValues, replyHandler: nil, errorHandler: nil)
+        }
     }
     
     override func willActivate() {
@@ -43,7 +47,7 @@ class InterfaceController: WKInterfaceController {
     private func loadTableData(){
         //Tabelle erstellen und füllen
         tableView.setNumberOfRows(tableData.count, withRowType: "RowController")
-        for (index, rowModel) in tableData.enumerated() {
+        for (index, rowModel) in tableData.sorted().enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
                 rowController.rowImage.setImage(UIImage(named: rowModel))

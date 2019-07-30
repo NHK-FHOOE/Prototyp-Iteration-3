@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A1E991022DD00B800BC4364 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E990F22DD00B800BC4364 /* DetailInterfaceController.swift */; };
 		8A1E991222DE0C0300BC4364 /* IOInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E991122DE0C0300BC4364 /* IOInterfaceController.swift */; };
+		8A24A32B22EA32E6003D3976 /* DialogAnalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A24A32A22EA32E6003D3976 /* DialogAnalog.swift */; };
 		8A42C84922E8D9E200DBD503 /* IORowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A42C84522E8D9E100DBD503 /* IORowController.swift */; };
 		8A42C84A22E8D9E200DBD503 /* BMKInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A42C84622E8D9E100DBD503 /* BMKInterfaceController.swift */; };
 		8A42C84B22E8D9E200DBD503 /* globalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A42C84722E8D9E100DBD503 /* globalVariables.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		8A1E990F22DD00B800BC4364 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 		8A1E991122DE0C0300BC4364 /* IOInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOInterfaceController.swift; sourceTree = "<group>"; };
+		8A24A32A22EA32E6003D3976 /* DialogAnalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogAnalog.swift; sourceTree = "<group>"; };
 		8A42C84522E8D9E100DBD503 /* IORowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IORowController.swift; sourceTree = "<group>"; };
 		8A42C84622E8D9E100DBD503 /* BMKInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMKInterfaceController.swift; sourceTree = "<group>"; };
 		8A42C84722E8D9E100DBD503 /* globalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalVariables.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				8AEB99B522DCEDFA001D717E /* RowController.swift */,
 				8A1E990F22DD00B800BC4364 /* DetailInterfaceController.swift */,
 				8A1E991122DE0C0300BC4364 /* IOInterfaceController.swift */,
+				8A24A32A22EA32E6003D3976 /* DialogAnalog.swift */,
 			);
 			path = "Prototyp Iteration 3 WatchKit Extension";
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				8A42C84C22E8D9E200DBD503 /* Dialog.swift in Sources */,
 				8AEB99A122DCEC3B001D717E /* ExtensionDelegate.swift in Sources */,
 				8A42C84922E8D9E200DBD503 /* IORowController.swift in Sources */,
+				8A24A32B22EA32E6003D3976 /* DialogAnalog.swift in Sources */,
 				8A42C84B22E8D9E200DBD503 /* globalVariables.swift in Sources */,
 				8AEB99B622DCEDFA001D717E /* RowController.swift in Sources */,
 				8AEB999F22DCEC3B001D717E /* InterfaceController.swift in Sources */,

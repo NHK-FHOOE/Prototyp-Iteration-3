@@ -15,9 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var defaults = UserDefaults(suiteName: "group.TestCompany.Prototyp-Iteration-3")
-        var intPassed = defaults!.integer(forKey: "passingInt")
-        intLabel.text = "\(intPassed)"
+        //print(intLabel.text ?? "noch kein intLabel Wert ...")
     }
 
 

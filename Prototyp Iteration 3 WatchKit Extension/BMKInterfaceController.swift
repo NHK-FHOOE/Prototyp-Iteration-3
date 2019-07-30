@@ -53,7 +53,7 @@ class BMKInterfaceController: WKInterfaceController {
         
         print(acceptedPick)
         
-        pushController(withName: "IOInterfaceController", context: ioCard(langtext: "Sonderoption", status: false, bmk: acceptedPick, force: false, index: 0))
+        pushController(withName: "IOInterfaceController", context: ioCard(langtext: "Sonderoption", status: false, bmk: acceptedPick, force: false, index: 0, type: "DO"))
     }
     
     var pickerList1: [String] = ["AC001","AD001","BA001","BA002","DB001","DB002","DB003"]

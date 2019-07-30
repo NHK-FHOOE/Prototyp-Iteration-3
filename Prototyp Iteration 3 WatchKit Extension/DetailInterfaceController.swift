@@ -31,7 +31,7 @@ class DetailInterfaceController: WKInterfaceController {
         case "Düse":
             tableData = ["Position", "Endlage"]
         case "Form":
-            tableData = ["Position", "Heizung", "Kühlung", "Druck", "Luftkreis"]
+            tableData = ["Holmposition", "Heizung", "Kühlung", "Luftkreis"]
         case "Peripherie":
             tableData = ["Steckdose", "Alarmlampe"]
         case "Schnecke":
@@ -55,7 +55,7 @@ class DetailInterfaceController: WKInterfaceController {
     
     private func loadTableData(tableData: [String]){
         tableView.setNumberOfRows(tableData.count, withRowType: "RowController")
-        for (index, rowModel) in tableData.enumerated() {
+        for (index, rowModel) in tableData.sorted().enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
             }
@@ -64,6 +64,6 @@ class DetailInterfaceController: WKInterfaceController {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         //Suche nach InterfaceController namens "DetailinterfaceController" und gebe ihm was in tableData unter dem gedrücken Index befindet
-        pushController(withName: "IOInterfaceController", context: ioCard(langtext: prevTableData + "-" + tableData[rowIndex], status: false, bmk: "", force: false, index: 0))
+        pushController(withName: "IOInterfaceController", context: ioCard(langtext: prevTableData + "-" + tableData[rowIndex], status: false, bmk: "", force: false, index: 0, type: "DO"))
     }
 }

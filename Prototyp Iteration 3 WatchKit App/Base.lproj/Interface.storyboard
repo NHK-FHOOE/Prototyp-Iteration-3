@@ -186,6 +186,38 @@
             </objects>
             <point key="canvasLocation" x="1037" y="345"/>
         </scene>
+        <!--DialogAnalog-->
+        <scene sceneID="vem-WX-Afe">
+            <objects>
+                <controller identifier="DialogAnalog" id="fgh-gy-E88" customClass="DialogAnalog" customModule="Prototyp_Iteration_3_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="pgx-fY-SMc">
+                            <items>
+                                <label width="0.80000000000000004" alignment="left" text="XXX" textAlignment="left" id="ueb-dx-0BK">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                </label>
+                                <label width="0.20000000000000001" height="1" alignment="center" verticalAlignment="bottom" text="U" id="iCO-Qa-rhJ"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="DnE-u9-02Y"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="qTX-XX-NgE"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="ngl-QW-xs3"/>
+                        <button width="1" alignment="left" title="Zurück" id="l8a-n6-5c4">
+                            <connections>
+                                <action selector="backButton" destination="fgh-gy-E88" id="X7w-jT-pns"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="bmkLabel" destination="ngl-QW-xs3" id="3JZ-gy-aeo"/>
+                        <outlet property="langtextLabel" destination="qTX-XX-NgE" id="6I0-9Z-f6T"/>
+                        <outlet property="unitLabel" destination="iCO-Qa-rhJ" id="TLQ-pA-I1b"/>
+                        <outlet property="valueLabel" destination="ueb-dx-0BK" id="6t8-6L-9vI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1037" y="643"/>
+        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="qcz-kC-X9s">
             <objects>
