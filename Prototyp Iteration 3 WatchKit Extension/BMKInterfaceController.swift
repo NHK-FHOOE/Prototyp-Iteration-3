@@ -49,16 +49,29 @@ class BMKInterfaceController: WKInterfaceController {
     }
     
     @IBAction func onAcceptPressed() {
-        let acceptedPick: String = "="+pickerList1[pickerListPos1]+"-"+pickerList2[pickerlistPos2]+"-"+pickerList3[pickerListPos3]
+        let selectedPick: String = "="+pickerList1[pickerListPos1]+"-"+pickerList2[pickerlistPos2]+"-"+pickerList3[pickerListPos3]
         
-        print(acceptedPick)
-        
-        pushController(withName: "IOInterfaceController", context: ioCard(langtext: "Sonderoption", status: false, bmk: acceptedPick, force: false, index: 0, type: "DO"))
+        switch selectedPick {
+        case formLuftData[0].bmk:
+            pushController(withName: "IOInterfaceController", context: formLuftData[0])
+        case formHolmData[0].bmk:
+            pushController(withName: "IOInterfaceController", context: formHolmData[0])
+        case formHolmData[1].bmk:
+            pushController(withName: "IOInterfaceController", context: formHolmData[1])
+        case formHolmData[2].bmk:
+            pushController(withName: "IOInterfaceController", context: formHolmData[2])
+        case formHolmData[3].bmk:
+            pushController(withName: "IOInterfaceController", context: formHolmData[3])
+        case roboterDruckData[0].bmk:
+            pushController(withName: "IOInterfaceController", context: roboterDruckData[0])
+        default:
+            pushController(withName: "IOInterfaceController", context:ioCard(langtext: "Sonderoption", status: false, bmk: selectedPick, force: false, index: 0, type: "DI"))
+        }
     }
     
-    var pickerList1: [String] = ["AC001","AD001","BA001","BA002","DB001","DB002","DB003"]
-    var pickerList2: [String] = ["BS01","BS13"]
-    var pickerList3: [String] = ["B100","B101","B102","B200","B201"]
+    var pickerList1: [String] = ["AC001","AG001","BA001","BA002","DB001","FA001","GC001"]
+    var pickerList2: [String] = ["BA01","BS01","BS13"]
+    var pickerList3: [String] = ["B100","B101","B102","B103","B104"]
     
     var pickerListPos1 = 0
     var pickerlistPos2 = 0

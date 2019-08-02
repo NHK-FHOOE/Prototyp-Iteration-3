@@ -28,8 +28,17 @@ class DialogAnalog: WKInterfaceController{
             singleIOCard = getSingleIOCard
             langtextLabel.setText(singleIOCard.langtext)
             bmkLabel.setText(singleIOCard.bmk)
-            valueLabel.setText("401")
-            unitLabel.setText("mm")
+            if getSingleIOCard.type == "DI"{
+                if getSingleIOCard.status{
+                   valueLabel.setText("Aktiv")
+                } else {
+                    valueLabel.setText("Inaktiv")
+                }
+                unitLabel.setText("")
+            } else {
+                valueLabel.setText("401")
+                unitLabel.setText("mm")
+            }
         }
     }
     override func willActivate() {

@@ -47,7 +47,7 @@ class InterfaceController: WKInterfaceController {
     private func loadTableData(){
         //Tabelle erstellen und füllen
         tableView.setNumberOfRows(tableData.count, withRowType: "RowController")
-        for (index, rowModel) in tableData.sorted().enumerated() {
+        for (index, rowModel) in tableData.enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
                 rowController.rowImage.setImage(UIImage(named: rowModel))

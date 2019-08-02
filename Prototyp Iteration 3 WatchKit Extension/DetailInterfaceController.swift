@@ -31,9 +31,9 @@ class DetailInterfaceController: WKInterfaceController {
         case "Düse":
             tableData = ["Position", "Endlage"]
         case "Form":
-            tableData = ["Holmposition", "Heizung", "Kühlung", "Luftkreis"]
+            tableData = ["Heizung", "Holmposition", "Kühlung", "Luftkreis"]
         case "Peripherie":
-            tableData = ["Steckdose", "Alarmlampe"]
+            tableData = ["Alarmlampe", "Steckdose"]
         case "Schnecke":
             tableData = ["Position"]
         default:
@@ -55,7 +55,7 @@ class DetailInterfaceController: WKInterfaceController {
     
     private func loadTableData(tableData: [String]){
         tableView.setNumberOfRows(tableData.count, withRowType: "RowController")
-        for (index, rowModel) in tableData.sorted().enumerated() {
+        for (index, rowModel) in tableData.enumerated() {
             if let rowController = tableView.rowController(at: index) as? RowController {
                 rowController.rowLabel.setText(rowModel)
             }

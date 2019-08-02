@@ -68,7 +68,7 @@ class IOInterfaceController: WKInterfaceController {
     }
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         //Suche nach InterfaceController namens "DetailinterfaceController" und gebe ihm was in tableData unter dem gedrücken Index befindet
-        if tableData[0].type == "DI" || tableData[0].type == "DO"{
+        if tableData[0].type == "DO"{
             pushController(withName: "Dialog", context: tableData[rowIndex])
         } else {
             pushController(withName: "DialogAnalog", context: tableData[rowIndex])
