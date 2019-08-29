@@ -12,6 +12,7 @@ import WatchKit
 class BMKInterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
+        setTitle("BMK")
         super.awake(withContext: context)
         let items1: [WKPickerItem] = pickerList1.map{
             let pickerItem = WKPickerItem()

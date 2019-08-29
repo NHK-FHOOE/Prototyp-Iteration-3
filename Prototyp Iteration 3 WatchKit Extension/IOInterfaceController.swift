@@ -28,8 +28,9 @@ class IOInterfaceController: WKInterfaceController {
             default:
                 tableData = [context] as! [ioCard]
             }
+            setTitle(detailData.langtext)
         }
-            
+        
         loadTableData(tableData: tableData)
     }
     override func willActivate() {

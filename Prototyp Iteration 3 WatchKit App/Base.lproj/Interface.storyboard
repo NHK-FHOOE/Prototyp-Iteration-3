@@ -186,6 +186,37 @@
             </objects>
             <point key="canvasLocation" x="1037" y="345"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="NDi-Ju-D61">
+            <objects>
+                <controller id="NJ4-Od-X2f">
+                    <items>
+                        <group width="1" alignment="left" id="b56-S8-WAV">
+                            <items>
+                                <label width="0.80000000000000004" alignment="left" text="XXX" textAlignment="center" id="jSj-cy-ggv">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                </label>
+                                <label width="0.20000000000000001" height="1" alignment="center" verticalAlignment="bottom" text="U" id="zdi-xd-YYN"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="hjs-7g-aOq"/>
+                        <separator alignment="left" id="OM0-cb-Yon"/>
+                        <button width="1" alignment="left" title="Setzen" id="mqw-lI-hEr">
+                            <connections>
+                                <action selector="backButton" destination="fgh-gy-E88" id="UT4-Uq-7zb"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Abbrechen" id="3O1-QW-udR">
+                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButton" destination="fgh-gy-E88" id="8rh-bG-Pd6"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1309" y="643"/>
+        </scene>
         <!--DialogAnalog-->
         <scene sceneID="vem-WX-Afe">
             <objects>
@@ -193,7 +224,7 @@
                     <items>
                         <group width="1" alignment="left" id="pgx-fY-SMc">
                             <items>
-                                <label width="0.80000000000000004" alignment="left" text="XXX" textAlignment="left" id="ueb-dx-0BK">
+                                <label width="0.80000000000000004" alignment="left" text="XXX" textAlignment="center" id="ueb-dx-0BK">
                                     <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                 </label>
                                 <label width="0.20000000000000001" height="1" alignment="center" verticalAlignment="bottom" text="U" id="iCO-Qa-rhJ"/>
